@@ -1,4 +1,4 @@
-package models
+package car
 
 // car model is used for car entity  which will be inside parking lot and occupy space
 type Car struct {
