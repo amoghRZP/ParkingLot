@@ -18,7 +18,7 @@ func NewSlot() *Slot {
 
 func (s *Slot) Occupy(cr car.Car) error {
 	if s.Car != nil {
-		return fmt.Errorf("slot: Slot already occupied")
+		return fmt.Errorf("slot already occupied")
 	}
 	s.Car = &cr
 	return nil

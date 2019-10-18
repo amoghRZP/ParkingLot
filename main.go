@@ -7,11 +7,12 @@ import (
 	"os"
 	"strings"
 
-	"github.com/amogmish/parkingLot/parking_lot/utils"
+	"github.com/amogmish/parkingLot/parking_lot/commands"
 )
 
 func main() {
-
+	var commandOrchestrator *commands.Command
+	commandOrchestrator = commands.InitCommandOrchestrator()
 	// check if file input exists and read from file
 	if len(os.Args) > 1 && os.Args[1] != "" {
 		cmdLineFile, err := os.Open(os.Args[1])
@@ -24,7 +25,7 @@ func main() {
 			cmdInput := cmdScanner.Text()
 			cmdInput = strings.TrimRight(cmdInput, "\n")
 			if cmdInput != "" {
-				output := utils.RunCommand(cmdInput)
+				output := commandOrchestrator.Run(cmdInput)
 				fmt.Println(output)
 			}
 		}
@@ -39,7 +40,7 @@ func main() {
 		cmdInput, _ := reader.ReadString('\n')
 		cmdInput = strings.TrimRight(cmdInput, "\n")
 		if cmdInput != "" {
-			output := utils.RunCommand(cmdInput)
+			output := commandOrchestrator.Run(cmdInput)
 			fmt.Println(output)
 		}
 	}

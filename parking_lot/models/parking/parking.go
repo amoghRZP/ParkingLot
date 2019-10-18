@@ -3,7 +3,7 @@ package parking
 import (
 	"fmt"
 
-	car "../car"
+	"../car"
 )
 
 // Parking is main component, for data structure a parking lot
@@ -78,4 +78,23 @@ func (p *Parking) RemoveCar(cr car.Car) {
 			p.Slots[i].Free()
 		}
 	}
+}
+
+func (p *Parking) RemoveCarFromSlot(slotNumber int) error {
+	for i, sl := range p.Slots {
+		if sl.Number == slotNumber {
+			p.Slots[i].Car = nil
+			return nil
+		}
+	}
+	return fmt.Errorf("can't find %d slot", slotNumber)
+}
+
+func (p *Parking) GetOccupiedSlots() (filledSlots []*Slot) {
+	for _, sl := range p.Slots {
+		if !sl.IsFree() {
+			filledSlots = append(filledSlots, sl)
+		}
+	}
+	return
 }
