@@ -36,3 +36,7 @@ func (s *Slot) Free() {
 func (s *Slot) GetCarNumberInSlot() string {
 	return s.Car.Number
 }
+
+func (s *Slot) GetCarColor() string {
+	return s.Car.Color
+}

@@ -14,5 +14,3 @@ func New(number, color string) *Car {
 		Color:  color,
 	}
 }
-
-// TODO:: To add getter setter and other methods

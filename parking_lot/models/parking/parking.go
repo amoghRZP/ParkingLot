@@ -2,6 +2,7 @@ package parking
 
 import (
 	"fmt"
+	"strings"
 
 	"../car"
 )
@@ -72,12 +73,15 @@ func (p *Parking) GetSlotByCarNumber(carNumber string) (slots *Slot) {
 	return
 }
 
-func (p *Parking) RemoveCar(cr car.Car) {
-	for i, sl := range p.Slots {
+func (this *Parking) GetSlotsByCarColor(carColor string) (slots []*Slot) {
+	for _, sl := range this.Slots {
 		if !sl.IsFree() {
-			p.Slots[i].Free()
+			if strings.ToLower(sl.GetCarColor()) == strings.ToLower(carColor) {
+				slots = append(slots, sl)
+			}
 		}
 	}
+	return
 }
 
 func (p *Parking) RemoveCarFromSlot(slotNumber int) error {
