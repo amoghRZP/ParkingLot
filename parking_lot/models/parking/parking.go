@@ -4,13 +4,14 @@ import (
 	"fmt"
 	"strings"
 
-	"../car"
+	"github.com/amogmish/parkingLot/parking_lot/models/car"
+	"github.com/amogmish/parkingLot/parking_lot/models/slot"
 )
 
 // Parking is main component, for data structure a parking lot
 type Parking struct {
 	Capacity int
-	Slots    []*Slot
+	Slots    []*slot.Slot
 }
 
 var (
@@ -22,10 +23,10 @@ var (
 func New(capacity int) *Parking {
 	parking := new(Parking)
 	parking.Capacity = capacity
-	parking.Slots = make([]*Slot, capacity)
+	parking.Slots = make([]*slot.Slot, capacity)
 	idx := startNumber
 	for i := range parking.Slots {
-		parking.Slots[i] = &Slot{Number: int(idx)}
+		parking.Slots[i] = &slot.Slot{Number: int(idx)}
 		idx++
 	}
 	parking.Save()
@@ -41,7 +42,7 @@ func (p *Parking) Save() {
 	savedParking = p
 }
 
-func (p *Parking) FindNearestSlot() (*Slot, error) {
+func (p *Parking) FindNearestSlot() (*slot.Slot, error) {
 	for _, sl := range p.Slots {
 		if sl.IsFree() {
 			return sl, nil
@@ -50,7 +51,7 @@ func (p *Parking) FindNearestSlot() (*Slot, error) {
 	return nil, fmt.Errorf("No Space Available")
 }
 
-func (p *Parking) AddCar(cr car.Car) (*Slot, error) {
+func (p *Parking) AddCar(cr car.Car) (*slot.Slot, error) {
 	sl, err := p.FindNearestSlot()
 	if err != nil {
 		return nil, err
@@ -61,7 +62,7 @@ func (p *Parking) AddCar(cr car.Car) (*Slot, error) {
 	return sl, nil
 }
 
-func (p *Parking) GetSlotByCarNumber(carNumber string) (slots *Slot) {
+func (p *Parking) GetSlotByCarNumber(carNumber string) (slots *slot.Slot) {
 	for _, sl := range p.Slots {
 		if !sl.IsFree() {
 			if sl.GetCarNumberInSlot() == carNumber {
@@ -73,7 +74,7 @@ func (p *Parking) GetSlotByCarNumber(carNumber string) (slots *Slot) {
 	return
 }
 
-func (this *Parking) GetSlotsByCarColor(carColor string) (slots []*Slot) {
+func (this *Parking) GetSlotsByCarColor(carColor string) (slots []*slot.Slot) {
 	for _, sl := range this.Slots {
 		if !sl.IsFree() {
 			if strings.ToLower(sl.GetCarColor()) == strings.ToLower(carColor) {
@@ -94,7 +95,7 @@ func (p *Parking) RemoveCarFromSlot(slotNumber int) error {
 	return fmt.Errorf("can't find %d slot", slotNumber)
 }
 
-func (p *Parking) GetOccupiedSlots() (filledSlots []*Slot) {
+func (p *Parking) GetOccupiedSlots() (filledSlots []*slot.Slot) {
 	for _, sl := range p.Slots {
 		if !sl.IsFree() {
 			filledSlots = append(filledSlots, sl)
