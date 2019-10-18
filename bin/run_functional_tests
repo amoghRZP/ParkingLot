@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "Testing command orchestrator package..."
+cd ../parking_lot/cmdmanager
+go test -v
+
+echo "Testing car package..."
+cd ../models/car
+go test -v
+
+echo "Testing parking package..."
+cd ../models/parking
+go test -v
