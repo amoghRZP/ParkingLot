@@ -1,9 +1,9 @@
-package parking
+package slot
 
 import (
 	"fmt"
 
-	car "../car"
+	"github.com/amogmish/parkingLot/app/models/car"
 )
 
 // A slot in parking lot

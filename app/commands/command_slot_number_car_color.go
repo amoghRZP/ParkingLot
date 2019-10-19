@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/amogmish/parkingLot/parking_lot/models/parking"
+	"github.com/amogmish/parkingLot/app/models/parking"
 )
 
 type CommandSlotNumberCarColor struct {
@@ -12,7 +12,7 @@ type CommandSlotNumberCarColor struct {
 	CarColor string
 }
 
-func (csncc *CommandSlotNumberCarColor) ParseArgs(args string) error {
+func (csncc *CommandSlotNumberCarColor) ParseArguments(args string) error {
 	csncc.Arguments = strings.Split(args, " ")
 	if !csncc.ValidateInput() {
 		return errInvalidInput

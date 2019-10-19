@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/amogmish/parkingLot/parking_lot/models/parking"
+	"github.com/amogmish/parkingLot/app/models/parking"
 )
 
 type CommandSlotNumberCarNumber struct {
@@ -12,7 +12,7 @@ type CommandSlotNumberCarNumber struct {
 	CarNumber string
 }
 
-func (csncn *CommandSlotNumberCarNumber) ParseArgs(args string) error {
+func (csncn *CommandSlotNumberCarNumber) ParseArguments(args string) error {
 	csncn.Arguments = strings.Split(args, " ")
 	if !csncn.ValidateInput() {
 		return errInvalidInput

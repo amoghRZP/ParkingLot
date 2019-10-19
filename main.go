@@ -7,12 +7,13 @@ import (
 	"os"
 	"strings"
 
-	"github.com/amogmish/parkingLot/parking_lot/commands"
+	"github.com/amogmish/parkingLot/app/commands"
 )
 
 func main() {
 	var commandOrchestrator *commands.Command
 	commandOrchestrator = commands.InitCommandOrchestrator()
+
 	// check if file input exists and read from file
 	if len(os.Args) > 1 && os.Args[1] != "" {
 		cmdLineFile, err := os.Open(os.Args[1])
