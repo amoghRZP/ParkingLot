@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/amogmish/parkingLot/parking_lot/models/car"
-	"github.com/amogmish/parkingLot/parking_lot/models/slot"
+	"github.com/amogmish/parkingLot/app/models/car"
+	"github.com/amogmish/parkingLot/app/models/slot"
 )
 
 // Parking is main component, for data structure a parking lot

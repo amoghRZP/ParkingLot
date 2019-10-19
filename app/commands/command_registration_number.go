@@ -3,7 +3,7 @@ package commands
 import (
 	"strings"
 
-	"github.com/amogmish/parkingLot/parking_lot/models/parking"
+	"github.com/amogmish/parkingLot/app/models/parking"
 )
 
 type CommandRegistrationNumber struct {

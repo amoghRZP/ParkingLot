@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/amogmish/parkingLot/parking_lot/models/parking"
+	"github.com/amogmish/parkingLot/app/models/parking"
 )
 
 // ICommand is interface all registered command

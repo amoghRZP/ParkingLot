@@ -3,7 +3,7 @@ package slot
 import (
 	"fmt"
 
-	"github.com/amogmish/parkingLot/parking_lot/models/car"
+	"github.com/amogmish/parkingLot/app/models/car"
 )
 
 // A slot in parking lot
