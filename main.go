@@ -12,6 +12,8 @@ import (
 
 func main() {
 	var commandOrchestrator *commands.Command
+
+	// Initialize the command orchestrator
 	commandOrchestrator = commands.InitCommandOrchestrator()
 
 	// check if file input exists and read from file
