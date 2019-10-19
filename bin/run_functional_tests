@@ -1,17 +1,17 @@
 #!/bin/bash
 
 echo "Testing command orchestrator package..."
-cd ../parking_lot/commands
+cd ../app/commands
 go test -v
 
 echo "Testing car package..."
-cd ../parking_lot/models/car
+cd ../app/models/car
 go test -v
 
 echo "Testing parking package..."
-cd ../parking_lot/models/parking
+cd ../app/models/parking
 go test -v
 
 echo "Testing slot package..."
-cd ../parking_lot/models/slot
+cd ../app/models/slot
 go test -v

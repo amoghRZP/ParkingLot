@@ -25,21 +25,22 @@ Package list in this application:
 
 ## Setup application
 
-Run bash ```setup``` in ```bin``` directory
+Run bash ```setup``` inside ```bin``` directory
 ```sh
-parking_lot $ bin/setup
+$ cd bin
+$ ./setup
 ```
 That command has automatically run unit testing, unit testing commands contained in the file  ```bin/run_functional_tests```
 
-This application fully controlled by command. Run bash ```parking_lot``` in bin directory with 2 options:
+This application fully controlled by command. Run bash ```parking_lot``` inside bin directory with 2 options:
 
 * The inputs commands are expected and taken from the file specified
 ```sh
-parking_lot $ bin/parking_lot [input_filepath]
+$ ./parking_lot [input_filepath]
 ```
 * Or start the program in interactive mode.
 ```sh
-parking_lot $ bin/parking_lot
+$ ./parking_lot
 ```
 **Command list**
 

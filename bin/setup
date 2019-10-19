@@ -4,4 +4,4 @@ echo "Building binary file..."
 go build ../main.go
 
 echo "Run unit testing..."
-sh run_functional_tests
+./run_functional_tests

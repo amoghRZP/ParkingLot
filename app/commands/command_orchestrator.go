@@ -34,6 +34,9 @@ func InitCommandOrchestrator() *Command {
 	cmd.CommandList["park"] = new(CommandPark)
 	cmd.CommandList["leave"] = new(CommandLeave)
 	cmd.CommandList["status"] = new(CommandStatus)
+	cmd.CommandList["registration_numbers_for_cars_with_colour"] = new(CommandRegistrationNumber)
+	cmd.CommandList["slot_numbers_for_cars_with_colour"] = new(CommandSlotNumberCarColor)
+	cmd.CommandList["slot_number_for_registration_number"] = new(CommandSlotNumberCarNumber)
 	return cmd
 }
 

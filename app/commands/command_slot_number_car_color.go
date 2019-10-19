@@ -12,7 +12,7 @@ type CommandSlotNumberCarColor struct {
 	CarColor string
 }
 
-func (csncc *CommandSlotNumberCarColor) ParseArgs(args string) error {
+func (csncc *CommandSlotNumberCarColor) ParseArguments(args string) error {
 	csncc.Arguments = strings.Split(args, " ")
 	if !csncc.ValidateInput() {
 		return errInvalidInput

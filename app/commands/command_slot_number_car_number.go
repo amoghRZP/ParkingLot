@@ -12,7 +12,7 @@ type CommandSlotNumberCarNumber struct {
 	CarNumber string
 }
 
-func (csncn *CommandSlotNumberCarNumber) ParseArgs(args string) error {
+func (csncn *CommandSlotNumberCarNumber) ParseArguments(args string) error {
 	csncn.Arguments = strings.Split(args, " ")
 	if !csncn.ValidateInput() {
 		return errInvalidInput
