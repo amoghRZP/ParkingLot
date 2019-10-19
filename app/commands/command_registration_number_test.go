@@ -56,12 +56,12 @@ func TestCommandRegistrationNumber_ValidateParams(t *testing.T) {
 	}{
 		{
 			"TestCase 1: Only one argument (valid)",
-			fields{CarColor: "white", Command: Command{Arguments: []string{"1", "white"}}},
+			fields{CarColor: "white", Command: Command{Arguments: []string{"white"}}},
 			true,
 		},
 		{
 			"TestCase 2: Less arguments (invalid)",
-			fields{CarColor: "white", Command: Command{Arguments: []string{"1"}}},
+			fields{CarColor: "white", Command: Command{Arguments: []string{"1", "white"}}},
 			false,
 		},
 	}
