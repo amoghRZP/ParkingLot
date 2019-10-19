@@ -69,7 +69,7 @@ func (cmd *Command) Run(command string) string {
 
 	output, err := cmdChild.Run()
 	if err != nil {
-		return fmt.Sprintf("%v\n", err)
+		return fmt.Sprintf("%v", err)
 	}
 	return output
 }

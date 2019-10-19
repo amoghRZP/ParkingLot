@@ -37,6 +37,6 @@ func (cp *CommandPark) Run() (string, error) {
 	if err != nil {
 		return output, err
 	}
-	output = fmt.Sprintf("Occupied slot number: %d", sl.Number)
+	output = fmt.Sprintf("Allocated slot number: %d", sl.Number)
 	return output, err
 }

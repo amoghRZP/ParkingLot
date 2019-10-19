@@ -48,7 +48,7 @@ func (p *Parking) FindNearestSlot() (*slot.Slot, error) {
 			return sl, nil
 		}
 	}
-	return nil, fmt.Errorf("No Space Available")
+	return nil, fmt.Errorf("Sorry, parking lot is full")
 }
 
 func (p *Parking) AddCar(cr car.Car) (*slot.Slot, error) {

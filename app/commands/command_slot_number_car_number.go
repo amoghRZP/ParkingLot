@@ -36,6 +36,6 @@ func (csncn *CommandSlotNumberCarNumber) Run() (string, error) {
 	if slot == nil {
 		return "Not found", nil
 	}
-	output = fmt.Sprint(slot)
+	output = fmt.Sprint(slot.Number)
 	return output, nil
 }
