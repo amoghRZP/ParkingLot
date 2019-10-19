@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func TestCommandRegistrationNumber_ParseArgs(t *testing.T) {
+func TestCommandRegistrationNumber_ParseArguments(t *testing.T) {
 	type fields struct {
 		Command  Command
 		CarColor string
@@ -38,7 +38,7 @@ func TestCommandRegistrationNumber_ParseArgs(t *testing.T) {
 				CarColor: tt.fields.CarColor,
 			}
 			if err := this.ParseArguments(tt.args.args); (err != nil) != tt.wantErr {
-				t.Errorf("CommandRegistrationNumber.ParseArgs() error = %v, wantErr %v", err, tt.wantErr)
+				t.Errorf("CommandRegistrationNumber.ParseArguments() error = %v, wantErr %v", err, tt.wantErr)
 			}
 		})
 	}

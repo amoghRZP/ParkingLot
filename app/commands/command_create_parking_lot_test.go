@@ -2,7 +2,7 @@ package commands
 
 import "testing"
 
-func TestCommandCreateParkingLot_ParseArgs(t *testing.T) {
+func TestCommandCreateParkingLot_ParseArguments(t *testing.T) {
 	type fields struct {
 		Command  Command
 		Capacity int
@@ -36,7 +36,7 @@ func TestCommandCreateParkingLot_ParseArgs(t *testing.T) {
 				CreationCapacity: tt.fields.Capacity,
 			}
 			if err := this.ParseArguments(tt.args.args); (err != nil) != tt.wantErr {
-				t.Errorf("CommandCreateParkingLot.ParseArgs() error = %v, wantErr %v", err, tt.wantErr)
+				t.Errorf("CommandCreateParkingLot.ParseArguments() error = %v, wantErr %v", err, tt.wantErr)
 			}
 		})
 	}

@@ -6,7 +6,7 @@ import (
 	"github.com/amogmish/parkingLot/app/models/car"
 )
 
-func TestCommandPark_ParseArgs(t *testing.T) {
+func TestCommandPark_ParseArguments(t *testing.T) {
 	type fields struct {
 		Command Command
 		Car     *car.Car
@@ -40,7 +40,7 @@ func TestCommandPark_ParseArgs(t *testing.T) {
 				Car:     tt.fields.Car,
 			}
 			if err := this.ParseArguments(tt.args.args); (err != nil) != tt.wantErr {
-				t.Errorf("CommandPark.ParseArgs() error = %v, wantErr %v", err, tt.wantErr)
+				t.Errorf("CommandPark.ParseArguments() error = %v, wantErr %v", err, tt.wantErr)
 			}
 		})
 	}

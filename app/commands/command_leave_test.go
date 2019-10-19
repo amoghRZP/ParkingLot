@@ -2,7 +2,7 @@ package commands
 
 import "testing"
 
-func TestCommandLeave_ParseArgs(t *testing.T) {
+func TestCommandLeave_ParseArguments(t *testing.T) {
 	type fields struct {
 		Command    Command
 		SlotNumber int
@@ -36,7 +36,7 @@ func TestCommandLeave_ParseArgs(t *testing.T) {
 				SlotNumber: tt.fields.SlotNumber,
 			}
 			if err := this.ParseArguments(tt.args.args); (err != nil) != tt.wantErr {
-				t.Errorf("CommandLeave.ParseArgs() error = %v, wantErr %v", err, tt.wantErr)
+				t.Errorf("CommandLeave.ParseArguments() error = %v, wantErr %v", err, tt.wantErr)
 			}
 		})
 	}
