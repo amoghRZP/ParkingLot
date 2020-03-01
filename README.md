@@ -1,7 +1,7 @@
 # parkingLot
 Solution for basic parking lot problem in Golang.
 
-**author: Amogh Mishra**
+**Author: Amogh Mishra**
 
 ## Package
 
